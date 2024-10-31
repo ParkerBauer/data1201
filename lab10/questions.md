@@ -2,6 +2,7 @@
 
 ### Question 1: What happens when you swap the delimiter from commas to tabs? How does the preview change? 
 (Make sure "disable live preview is not checked if you don't see a change)
+
 when using commas it reconizes each comma as a new colum. this makes for many colum each with specific data
 when using the tabs it only sees the tabs as new colums so all the data is turned into only 2 colums
 
