@@ -26,3 +26,4 @@ It will onlt show the data points that are including within the highlighted sect
 # Questions for Post-Lab Assignment 10!
 
 ### Question 6: After the last step, some columns are empty. (You can check by text faceting a column) Why? What do you think we can do to fix it?
+The whole sex colum is empty but there are also many the have null. I think we should fix this by either giving every empty null or deleting the empty colums as we dont have that data
