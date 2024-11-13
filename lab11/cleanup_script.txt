@@ -1,0 +1,60 @@
+[
+  {
+    "op": "core/column-addition-by-fetching-urls",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "scientificName",
+    "urlExpression": "grel:\"http://api.gbif.org/v1/species/match?name=\"+escape(value,'url')",
+    "onError": "set-to-blank",
+    "newColumnName": "gbif_JSON",
+    "columnInsertIndex": 3,
+    "delay": 500,
+    "cacheResponses": true,
+    "httpHeadersJson": [
+      {
+        "name": "authorization",
+        "value": ""
+      },
+      {
+        "name": "if-modified-since",
+        "value": ""
+      },
+      {
+        "name": "accept-language",
+        "value": ""
+      },
+      {
+        "name": "accept-encoding",
+        "value": ""
+      },
+      {
+        "name": "user-agent",
+        "value": "OpenRefine 3.8.5 [TRUNK]"
+      },
+      {
+        "name": "accept",
+        "value": "*/*"
+      },
+      {
+        "name": "accept-charset",
+        "value": ""
+      }
+    ],
+    "description": "Create column gbif_JSON at index 3 by fetching URLs based on column scientificName using expression grel:\"http://api.gbif.org/v1/species/match?name=\"+escape(value,'url')"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "gbif_JSON",
+    "expression": "grel:value.parseJson().get(\"family\")",
+    "onError": "set-to-blank",
+    "newColumnName": "gbif_family",
+    "columnInsertIndex": 4,
+    "description": "Create column gbif_family at index 4 based on column gbif_JSON using expression grel:value.parseJson().get(\"family\")"
+  }
+]
